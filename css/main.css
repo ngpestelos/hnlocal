@@ -2,7 +2,7 @@ body {
   font: 16px Georgia, "Times New Roman", serif;
 }
 
-#header { background-color: #F1C73C; margin-bottom: 0; }
+#header { background-color: #FF6600; margin-bottom: 0; }
 
 #nav a { color: #E0E0E0; }
 
@@ -11,7 +11,7 @@ body {
 
 .big { font-size: 18px; padding: 5px; margin-top: 4px; }
 
-.main_content { border-bottom: 6px solid #F1C73C; background-color: #E0E0E0; }
+.main_content { border-bottom: 6px solid #FF6600; background-color: #E0E0E0; }
 
 .pad_24 { padding: 24px; }
 
