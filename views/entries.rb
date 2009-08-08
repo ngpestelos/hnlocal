@@ -12,11 +12,10 @@ def all()
   }
 end
 
-def by_type(type)
+def latest()
   {
     :map => "function(doc) {
-      if (doc.type == \"#{type}\")
-        emit(Date.parse(doc.updated), doc);
+      emit(Date.parse(doc.updated), doc);
     }"
   }
 end
@@ -25,5 +24,5 @@ db.delete_doc db.get('_design/entries') rescue nil
 
 db.save_doc({
   "_id"  => "_design/entries",
-  :views => { :all => all }
+  :views => { :all => all, :latest => latest() }
 })
