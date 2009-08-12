@@ -27,7 +27,7 @@ $rows = $result->getBody(true)->rows;
         <h2 class="site_id"><a href=".">news.ycombinator.local</a></h2>
       </div>
       <div id="stuff" class="span-18 push-3 last main_content">
-        <div class="pad_24">
+        <div class="pad_28">
           <ol>
           <?php
             foreach($rows as $r) {
