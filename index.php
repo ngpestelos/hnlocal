@@ -1,11 +1,9 @@
-<?php>
+<?php
 
 require_once("couchdb.php");
 $db = new CouchDB('hn');
-$result = $db->get_item('_design/entries/_view/all');
+$result = $db->get_item('_design/entries/_view/latest?limit=30&descending=true');
 $rows = $result->getBody(true)->rows;
-
-
 
 ?>
 
@@ -23,16 +21,16 @@ $rows = $result->getBody(true)->rows;
   </head>
   <body>
     <div class="container">
-      <div id="header" class="span-18 push-3 last">
+      <div id="header">
         <h2 class="site_id"><a href=".">news.ycombinator.local</a></h2>
       </div>
-      <div id="stuff" class="span-18 push-3 last main_content">
+      <div id="stuff" class="main_content">
         <div class="pad_28">
           <ol>
           <?php
             foreach($rows as $r) {
               echo "<li>";
-              echo $r->value->title;      
+              echo "<a href=\"" . $r->id . "\">" . $r->value->title . "</a>";      
               echo "</li>";
             }
           ?>
